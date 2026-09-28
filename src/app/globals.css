@@ -8,6 +8,10 @@
   --muted: #718075;
   --cream: #f6f6f0;
   --line: #e7ece5;
+  --red: #d2382a;
+  --red-dark: #a92418;
+  --red-tint: #fdeeec;
+  --red-line: #f2c4bf;
 }
 * {
   box-sizing: border-box;
@@ -289,15 +293,21 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: 9px;
-  background: #f0f5eb;
+  background: var(--red-tint);
+  border: 1px solid var(--red-line);
   padding: 11px 12px;
   border-radius: 7px;
-  color: var(--green);
+  color: var(--red-dark);
   font-size: 12px;
+  font-weight: 600;
   white-space: nowrap;
+  transition: background 0.2s;
+}
+.cartpill:hover {
+  background: #fbded8;
 }
 .cartpill b {
-  background: #2d754a;
+  background: var(--red);
   color: white;
   display: grid;
   place-items: center;
@@ -419,7 +429,7 @@ summary:focus-visible {
 }
 .hero h1 em {
   font-style: normal;
-  color: #37834d;
+  color: var(--red);
 }
 .hero p {
   font-size: 14px;
@@ -461,6 +471,22 @@ summary:focus-visible {
   font-size: 12px;
   min-height: 36px;
 }
+.btn.red {
+  background: var(--red);
+  box-shadow: 0 2px 8px #c22c1e24;
+}
+.btn.red:hover:not(:disabled) {
+  background: var(--red-dark);
+}
+.btn.ghost-red {
+  background: #fff;
+  border-color: var(--red-line);
+  color: var(--red-dark);
+}
+.btn.ghost-red:hover:not(:disabled) {
+  background: var(--red-tint);
+  border-color: var(--red);
+}
 .full-width {
   width: 100%;
 }
@@ -476,7 +502,7 @@ summary:focus-visible {
   align-items: center;
   font-size: 12px;
   font-weight: 600;
-  color: #516446;
+  color: var(--red-dark);
 }
 .hero-points {
   display: flex;
@@ -705,8 +731,9 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #b78343;
+  color: var(--red-dark);
   font-size: 10px;
+  font-weight: 600;
 }
 .demo-badge {
   color: #929b87;
@@ -761,12 +788,13 @@ summary:focus-visible {
   top: 7px;
   left: 7px;
   z-index: 1;
-  background: #f4ecda;
-  color: #b48035;
+  background: var(--red);
+  color: #fff;
   font-size: 9px;
   padding: 3px 6px;
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: 600;
+  box-shadow: 0 2px 6px #c22c1e26;
 }
 .heart {
   position: absolute;
@@ -783,9 +811,9 @@ summary:focus-visible {
   z-index: 2;
 }
 .heart.saved {
-  color: #b36b63;
-  border-color: #eccac2;
-  background: #fff4ee;
+  color: var(--red);
+  border-color: #f0c6c0;
+  background: #fdf0ee;
 }
 .product-meta {
   font-size: 9px;
@@ -794,7 +822,7 @@ summary:focus-visible {
   line-height: 1.25;
 }
 .outstock {
-  color: #a45543;
+  color: var(--red-dark);
 }
 .pname {
   font-size: 14px;
@@ -845,10 +873,10 @@ summary:focus-visible {
 }
 .add {
   width: 100%;
-  border: 1px solid #d7e3cc;
-  background: #f5f8ef;
+  border: 1px solid var(--red);
+  background: var(--red);
   border-radius: 5px;
-  color: #628252;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -857,31 +885,47 @@ summary:focus-visible {
   margin-top: 10px;
   font-size: 11px;
   min-height: 35px;
-  font-weight: 500;
+  font-weight: 600;
+  box-shadow: 0 2px 6px #c22c1e1f;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 .add:hover:not(:disabled) {
-  background: #e8f0df;
-  border-color: #b4cca6;
+  background: var(--red-dark);
+  border-color: var(--red-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px #c22c1e2e;
 }
 .qty {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #cdddc2;
+  border: 1px solid var(--red-line);
   border-radius: 5px;
   overflow: hidden;
   margin-top: 10px;
   height: 36px;
-  color: #48763e;
+  color: var(--red-dark);
   min-width: 90px;
 }
 .qty button {
   height: 100%;
   width: 33px;
   border: 0;
-  background: #f1f6e9;
-  color: #4f7c41;
+  background: var(--red-tint);
+  color: var(--red);
   font-size: 19px;
+  font-weight: 600;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.qty button:hover {
+  background: #fadbd6;
+  color: var(--red-dark);
 }
 .qty span {
   font: 600 13px "DM Sans";
@@ -891,11 +935,12 @@ summary:focus-visible {
 .quick-order {
   text-align: center;
   font-size: 9px;
-  color: #8b9e7e;
+  color: var(--red);
+  font-weight: 500;
   margin-top: 7px;
 }
 .quick-order:hover {
-  color: #216d3b;
+  color: var(--red-dark);
 }
 .freshbanner {
   display: grid;
@@ -996,10 +1041,12 @@ summary:focus-visible {
 }
 .saving {
   font-size: 10px;
-  color: #ae8745;
-  background: #f1e9d6;
+  color: var(--red-dark);
+  background: var(--red-tint);
+  border: 1px solid var(--red-line);
   padding: 4px 7px;
   border-radius: 4px;
+  font-weight: 500;
 }
 .bundle-images {
   display: flex;
@@ -3662,11 +3709,11 @@ summary:focus-visible {
   color: #7d8175;
 }
 .add {
-  color: #3b642c;
-  border-color: #c2d4b5;
+  color: #fff;
+  border-color: var(--red);
 }
 .quick-order {
-  color: #587648;
+  color: var(--red);
 }
 .demo-badge {
   color: #657252;

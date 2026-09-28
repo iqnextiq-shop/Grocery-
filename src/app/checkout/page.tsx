@@ -205,7 +205,7 @@ export default function Checkout() {
             বন্ধ করলে তা মুছে যায়।
           </p>
           <button
-            className="btn field full confirm-button"
+            className="btn red field full confirm-button"
             type="submit"
             disabled={busy}
           >
