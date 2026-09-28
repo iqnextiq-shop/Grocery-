@@ -123,13 +123,13 @@ export default function ProductDetail({ product: p }: { product: Product }) {
           </div>
           <div className="detail-actions">
             <button
-              className="btn"
+              className="btn red"
               disabled={!v.stock}
               onClick={() => add(p.id, vid, q)}
             >
               কার্টে যোগ করুন <ArrowRight size={17} />
             </button>
-            <button className="btn light" disabled={!v.stock} onClick={order}>
+            <button className="btn ghost-red" disabled={!v.stock} onClick={order}>
               এখনই অর্ডার করুন
             </button>
           </div>

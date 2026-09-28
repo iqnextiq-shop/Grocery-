@@ -88,7 +88,7 @@ export default function Cart() {
             savings={savings}
             insideDhaka={location === "ঢাকা"}
           >
-            <Link className="btn full-width" href="/checkout">
+            <Link className="btn red full-width" href="/checkout">
               অর্ডার সম্পন্ন করুন <ArrowRight size={17} />
             </Link>
           </OrderSummary>
